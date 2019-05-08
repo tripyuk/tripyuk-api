@@ -13,7 +13,7 @@ class CreateAdvertiseListingTable extends Migration
      */
     public function up()
     {
-        Schema::create('advertise_listing', function (Blueprint $table) {
+        Schema::create('advertise_listings', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('agent_id');
             $table->string('title');
