@@ -12,7 +12,7 @@ class BaseResponse
      */
     public static function getSingleData($data) {
         return [
-            'erroe' => 0,
+            'error' => 0,
             'status' => 200,
             'message' => 'success',
             'data' => $data,

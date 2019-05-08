@@ -10,7 +10,7 @@ class UserResponse extends BaseResponse
     {
         return [
             'error' => 0,
-            'status' => 401,
+            'status' => 200,
             'data' => $data,
             'message' => 'Success login',
         ];
