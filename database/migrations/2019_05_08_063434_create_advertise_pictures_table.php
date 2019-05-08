@@ -20,7 +20,7 @@ class CreateAdvertisePicturesTable extends Migration
 
             $table->foreign('advertise_listing_id')
                 ->references('id')
-                ->on('advertise_listing')
+                ->on('advertise_listings')
                 ->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
