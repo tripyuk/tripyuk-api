@@ -1,7 +1,7 @@
 @extends('layouts.index')
 
 @section('search_form')
-    @include('home._search_form')
+    @include('home._search-form')
 @stop
 @section('content')
     <section class="ftco-section services-section bg-light">
