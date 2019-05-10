@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Helpers\Helpers;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UserRequest extends FormRequest
@@ -27,7 +29,7 @@ class UserRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required',
-            'c_password' => 'required|same:password',
+            'c_password' => 'required|same:password'
         ];
     }
 
@@ -44,5 +46,11 @@ class UserRequest extends FormRequest
             'password.required' => 'Password is required!',
             'c_password.required' => 'Confirm Password is required!',
         ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        $validate = new Helpers();
+        $validate->failedValidation($validator);
     }
 }

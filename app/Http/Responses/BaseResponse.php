@@ -18,4 +18,15 @@ class BaseResponse
             'data' => $data,
         ];
     }
+
+    public function validationFailResponse($errors)
+    {
+        return [
+            'meta' => [
+                'status' => 400,
+                'message' => 'Bad Requests'
+            ],
+            'data' => $errors
+        ];
+    }
 }
