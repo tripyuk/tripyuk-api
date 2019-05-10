@@ -18,4 +18,5 @@ Route::post('register', 'API\Users\UserController@register');
 
 Route::group(['middleware' => 'auth:api'], function(){
     Route::post('details', 'API\Users\UserController@details');
+    Route::post('advertise', 'API\AdvertiseController@createAdvertise');
 });

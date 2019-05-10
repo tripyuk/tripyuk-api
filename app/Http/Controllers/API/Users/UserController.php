@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\API\Users;
 
-use App\Http\Requests\UserRequest;
+use App\Http\Requests;
 use App\Http\Responses\UserResponse;
 use App\Http\Controllers\Controller;
 use App\User;
@@ -36,13 +36,10 @@ class UserController extends Controller
             return response(UserResponse::validateEmailAndPassword(), Response::HTTP_UNAUTHORIZED);
         }
     }
-    /**
-     * Register api
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function register(UserRequest $request)
+
+    public function register(Requests\UserRequest $request)
     {
+
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
